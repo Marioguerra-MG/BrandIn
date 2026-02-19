@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandIn</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/index.css">
+    <link rel="stylesheet" href="/src/css/toast.css">
+    <link rel="stylesheet" href="/src/css/planoPago.css">
+    <link rel="stylesheet" href="/src/css/selecaoDeCor.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">Brandin</div>
+
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu(event)">☰</div>
+
+            <div class="menu" id="menu">
+                <a href="#" onclick="openStackOptions()">Adicionar Stack 🔒</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================= -->
+    <!-- MODAL STACK -->
+    <!-- ========================= -->
+
+    <div class="stack-modal" id="stackModal">
+        <div class="stack-content">
+
+            <div class="stack-header">
+                <button class="stack-close-btn" onclick="closeStackModal()">✕</button>
+
+                <div>
+                    <h3>Escolha suas Stacks 🚀</h3>
+                    <p>Você pode selecionar até 5 stacks</p>
+                </div>
+
+                <button class="stack-close" onclick="confirmStackSelection()">
+                    Concluir
+                </button>
+            </div>
+
+            <div class="stack-limit-info">
+                <span id="stackCounter">0/5 stacks</span>
+            </div>
+
+            <div class="stack-body">
+                <div class="stack-options" id="stackOptions"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- APP -->
+    <!-- ========================= -->
+
+    <div class="app">
+
+        <p class="subtitle">Crie seu BrandIn</p>
+
+        <div class="badge-wrapper">
+            <div class="badge" id="badge">
+
+                <div class="badge-top" id="badgeTop"></div>
+
+                <div class="profile-img">
+                    <img id="previewImage">
+                </div>
+
+                <div class="badge-body">
+                    <h3 id="previewName">Seu Nome</h3>
+                    <p id="previewRole">Seu Cargo</p>
+                    <div class="badge-stack" id="badgeStack"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 👇 SOCIAL FORA DO CRACHÁ -->
+        <div class="user-social-container">
+            <div id="userSocialDisplay"></div>
+        </div>
+
+
+        <div class="controls">
+
+            <div class="step active" id="step1">
+                <input type="text" id="nameInput" placeholder="Digite seu nome">
+                <button onclick="nextStep(1)">Próximo</button>
+            </div>
+
+            <div class="step" id="step2">
+                <input type="text" id="roleInput" placeholder="Digite seu cargo">
+                <button onclick="nextStep(2)">Próximo</button>
+            </div>
+
+            <div class="step" id="step3">
+                <input type="file" id="imageInput" accept="image/*">
+                <button onclick="nextStep(3)">Finalizar</button>
+            </div>
+
+            <div class="step" id="step4">
+                <div class="color-options">
+                    <div class="color-btn" data-color="#0d6efd"></div>
+                    <div class="color-btn" data-color="#198754"></div>
+                    <div class="color-btn" data-color="#dc3545"></div>
+                    <div class="color-btn" data-color="#6f42c1"></div>
+                    <div class="color-btn" data-color="#fd7e14"></div>
+                </div>
+
+                <button id="downloadBtn" onclick="downloadBadge()" disabled>
+                    Baixar Crachá
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="/src/js/toast.js"></script>
+    <script src="/src/js/index.js"></script>
+    <script src="/src/js/selecaoDeCor.js"></script>
+    <script src="/src/js/brandinDownload.js"></script>
+    <script src="/src/js/stacksData.js"></script>
+    <script src="/src/js/planoPago.js"></script>
+
+</body>
+</html>
