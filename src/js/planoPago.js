@@ -13,8 +13,6 @@ if (urlParams.get("pro") === "true") {
 let isProUser = localStorage.getItem("isProUser") === "true";
 
 
-/* ====================== 
-
 const MAX_STACKS = 5;
 
 /* ====================== */
