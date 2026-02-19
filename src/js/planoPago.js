@@ -1,17 +1,20 @@
 
-
-/* ====================== */
 /* ====================== */
 /* VERIFICA SE USUÁRIO É PRO */
 /* ====================== */
 
+// Verifica se veio da ativação
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get("pro") === "true") {
+  localStorage.setItem("isProUser", "true");
+}
+
+// Define status PRO
 let isProUser = localStorage.getItem("isProUser") === "true";
+
 
 /* ====================== 
 
-let isProUser = true;
-
-*/
 const MAX_STACKS = 5;
 
 /* ====================== */
