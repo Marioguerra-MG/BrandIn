@@ -1,3 +1,4 @@
+
 /* RESET */
 * {
     margin: 0;
@@ -9,7 +10,6 @@
     --primary-gradient: linear-gradient(135deg, #0ea5e9, #6366f1);
     --primary-color: #0ea5e9;
 }
-
 
 /* BODY */
 body {
@@ -23,65 +23,51 @@ body {
     color: white;
 }
 
-/* ================= HEADER PROFISSIONAL ================= */
-
+/* ================= HEADER ================= */
 .header {
     width: 100%;
     max-width: 420px;
     padding: 15px 20px;
     margin-bottom: 30px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-
     border-radius: 14px;
-
     position: relative;
     z-index: 1000;
 }
 
-/* Logo à esquerda */
 .logo {
     font-size: 20px;
     font-weight: 700;
     color: white;
 }
 
-/* Container do menu */
 .menu-container {
     position: relative;
 }
 
-/* Ícone hambúrguer à direita */
 .menu-icon {
     font-size: 22px;
     cursor: pointer;
     color: white;
 }
 
-/* Dropdown menu */
 .menu {
     position: absolute;
     top: 35px;
     right: 0;
-    /* 🔥 agora fica alinhado à direita */
-
     width: 180px;
     background: #ffffff;
     border-radius: 12px;
     padding: 12px;
-
     display: none;
     flex-direction: column;
     gap: 12px;
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.2s ease;
-
     z-index: 2000;
 }
 
@@ -100,21 +86,12 @@ body {
     display: flex;
 }
 
-/* Animação suave */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-
-/* APP */
+/* ================= APP ================= */
 .app {
     width: 100%;
     max-width: 420px;
@@ -124,7 +101,6 @@ body {
     gap: 18px;
 }
 
-/* SUBTITLE */
 .subtitle {
     font-size: 14px;
     opacity: 0.8;
@@ -147,35 +123,50 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* TOP */
+/* BADGE TOP */
 .badge-top {
     height: 110px;
     background: linear-gradient(135deg, #ff4d00, #ff7a00);
 }
 
-/* FOTO */
-.profile-img {
+/* QR CODE (substituindo a foto) */
+.qr-container {
     position: absolute;
-    top: 60px;
+    top: 40px; /* onde a foto ficava */
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    padding: 6px;
-    background: #e5e7eb;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.profile-img img {
+#qrCode img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 12px;
 }
 
-/* BODY BADGE */
+#txtConect{
+    font-size: 8px;
+    color: #ffffffad;
+}
+
+.txtStep3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#txtContatos{
+    font-size: 14px;
+}
+
+/* BADGE BODY */
 .badge-body {
-    margin-top: 100px;
+    margin-top: 80px; /* espaço para o QR Code */
     padding: 20px;
     text-align: center;
 }
@@ -189,7 +180,7 @@ body {
 .badge-body p {
     margin-top: 6px;
     font-size: 15px;
-    color: #ff4d00;
+    color: #9e9e9e;
     font-weight: 500;
 }
 
@@ -257,17 +248,4 @@ button:hover {
 /* FOOTER SPACE */
 .footer-space {
     height: 20px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }

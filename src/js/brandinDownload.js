@@ -1,3 +1,4 @@
+
 function downloadBadge() {
 
   const badge = document.getElementById("badge");
@@ -89,7 +90,7 @@ function downloadBadge() {
     }, 800);
 
   }).catch(() => {
-    showToast("Erro ao gerar o crachá ❌");
+    showToast("Erro ao gerar ❌");
   });
 }
 

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       badgeTop.style.background = selectedColor;
 
       // 🔥 Aplica no texto do cargo
-      previewRole.style.color = selectedColor;
+      // previewRole.style.color = selectedColor;
 
     });
   });

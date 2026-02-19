@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrandIn</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/index.css">
     <link rel="stylesheet" href="/src/css/toast.css">
@@ -72,11 +71,13 @@
 
                 <div class="badge-top" id="badgeTop"></div>
 
-                <div class="profile-img">
-                    <img id="previewImage">
+                <div class="qr-container">
+                    <p id="txtConect">Conecte-se comigo.</p>
+                    <div id="qrCode"></div> <!-- QR code vai aparecer aqui -->
                 </div>
 
                 <div class="badge-body">
+
                     <h3 id="previewName">Seu Nome</h3>
                     <p id="previewRole">Seu Cargo</p>
                     <div class="badge-stack" id="badgeStack"></div>
@@ -104,7 +105,13 @@
             </div>
 
             <div class="step" id="step3">
-                <input type="file" id="imageInput" accept="image/*">
+                <!--<input type="file" id="imageInput" accept="image/*">-->
+                <div class="txtStep3">
+                    <p id="txtContatos">Digite seu WhatsApp, Instagram ou seu Portifolio</p>
+                </div>
+
+                <input type="text" id="contactInput">
+
                 <button onclick="nextStep(3)">Finalizar</button>
             </div>
 
@@ -118,7 +125,7 @@
                 </div>
 
                 <button id="downloadBtn" onclick="downloadBadge()" disabled>
-                    Baixar Crachá
+                    Baixar
                 </button>
             </div>
 
@@ -129,6 +136,9 @@
     <div id="toast" class="toast"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Bibliotecas externas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="/src/js/toast.js"></script>
     <script src="/src/js/index.js"></script>
     <script src="/src/js/selecaoDeCor.js"></script>
@@ -137,4 +147,5 @@
     <script src="/src/js/planoPago.js"></script>
 
 </body>
+
 </html>
