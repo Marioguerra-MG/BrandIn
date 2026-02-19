@@ -1,7 +1,18 @@
 
 
 /* ====================== */
+/* ====================== */
+/* VERIFICA SE USUÁRIO É PRO */
+/* ====================== */
+
+let isProUser = localStorage.getItem("isProUser") === "true";
+
+
+/* ====================== 
+
 let isProUser = true;
+
+*/
 const MAX_STACKS = 5;
 
 /* ====================== */

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Ativando Plano PRO...</title>
+
+<style>
+body{
+  background:#0f172a;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+  text-align:center;
+}
+</style>
+
+</head>
+<body>
+
+<div>
+  <h2>🎉 Obrigado pela compra!</h2>
+  <p>Estamos ativando seu Plano PRO...</p>
+</div>
+
+<script>
+
+// 🔥 Ativa PRO automaticamente
+localStorage.setItem("isProUser", "true");
+
+// Pequeno delay só para UX
+setTimeout(() => {
+  window.location.href = "index.html";
+}, 2500);
+
+</script>
+
+</body>
+</html>
