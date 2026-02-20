@@ -81,9 +81,10 @@ function openStackOptions() {
     showToast("Stacks disponíveis apenas no Plano Pro 🔒");
     return;
   }
-
+  
   const modal = document.getElementById("stackModal");
   if (modal) modal.classList.add("show");
+  modal.dataset.mode = "pro";
 
   updateStackCounter();
 }

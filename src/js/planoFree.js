@@ -97,3 +97,10 @@ function openStackOptionsFree() {
 
     updateCounter(); // 👈 ATUALIZA AO ABRIR
 }
+
+
+// Marca o modal como FREE
+modal.dataset.mode = "free";
+
+modal.classList.add("show");
+updateCounter();
