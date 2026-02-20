@@ -242,3 +242,4 @@ function updateProUI() {
     showToast("Plano Premium ativado 👑");
   }
 }
+
