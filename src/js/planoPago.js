@@ -2,26 +2,17 @@
 /* VERIFICA SE USUÁRIO É PRO */
 /* ====================== */
 
-/* Verifica se veio da ativação
+/* Verifica se veio da ativação*/
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get("pro") === "true") {
   localStorage.setItem("isProUser", "true");
 }
-*/
+
 
 // Define status PRO
-//let isProUser = localStorage.getItem("isProUser") === "true";
-
-// 🔐 Ativação segura via token
-const urlParams = new URLSearchParams(window.location.search);
-const token = urlParams.get("token");
-
-if (token && typeof activateProSecure === "function") {
-  activateProSecure(token);
-}
+let isProUser = localStorage.getItem("isProUser") === "true";
 
 
-let isProUser = window.isUserProSecure();
 
 
 const MAX_STACKS = 5;
