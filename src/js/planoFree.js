@@ -6,81 +6,78 @@ const MAX_FREE_STACKS = 3;
 
 function openStackOptionsFree() {
 
-  const modal = document.getElementById("stackModal");
-  const container = document.getElementById("stackOptions");
+    const modal = document.getElementById("stackModal");
+    const container = document.getElementById("stackOptions");
 
-  if (!modal || !container) return;
+    if (!modal || !container) return;
 
-  container.innerHTML = "";
+    container.innerHTML = "";
 
-  stacksFree.forEach(stack => {
+    stacksFree.forEach(stack => {
 
-    const div = document.createElement("div");
-    div.classList.add("stack-option");
-    div.dataset.type = stack.type;
+        const div = document.createElement("div");
+        div.classList.add("stack-option");
+        div.dataset.type = stack.type;
 
-    div.innerHTML = `
+        div.innerHTML = `
       <img src="${stack.icon}">
       <span>${stack.name}</span>
     `;
 
-    div.addEventListener("click", () => {
+        div.addEventListener("click", () => {
 
-  const badgeContainer = document.getElementById("badgeStack");
+            const badgeContainer = document.getElementById("badgeStack");
 
-  // 🔎 Conta apenas stacks FREE
-  const currentFreeStacks = badgeContainer.querySelectorAll(
-    'img[data-free="true"]'
-  ).length;
+            const existingIcon = badgeContainer.querySelector(
+                `img[data-type="${stack.type}"][data-free="true"]`
+            );
 
-  // 🚫 Limite FREE real
-  if (!div.classList.contains("selected") && currentFreeStacks >= MAX_FREE_STACKS) {
-    showToast("Limite FREE atingido ");
-    return;
-  }
+            const currentFreeStacks = badgeContainer.querySelectorAll(
+                'img[data-free="true"]'
+            ).length;
 
-  div.classList.toggle("selected");
+            // Se já existe → remover
+            if (existingIcon) {
+                existingIcon.remove();
+                div.classList.remove("selected");
+                showToast("Stack removida");
+                return;
+            }
 
-  if (div.classList.contains("selected")) {
+            // Se não existe → validar limite
+            if (currentFreeStacks >= MAX_FREE_STACKS) {
+                showToast("Limite FREE atingido");
+                return;
+            }
 
-    const icon = document.createElement("img");
-    icon.src = stack.icon;
-    icon.dataset.type = stack.type;
+            // Criar nova stack FREE
+            const icon = document.createElement("img");
+            icon.src = stack.icon;
+            icon.dataset.type = stack.type;
+            icon.dataset.free = "true";
+            icon.classList.add("stack-icon");
 
-    // 👇 Marca como FREE
-    icon.dataset.free = "true";
+            icon.addEventListener("click", () => {
+                icon.remove();
+                div.classList.remove("selected");
+            });
 
-    icon.classList.add("stack-icon");
+            badgeContainer.appendChild(icon);
+            div.classList.add("selected");
 
-    icon.addEventListener("click", () => {
-      icon.remove();
-      div.classList.remove("selected");
-      showToast("Stack removida ");
+        });
+
+
+
+        container.appendChild(div);
     });
 
-    badgeContainer.appendChild(icon);
+    // Atualiza título do modal
+    const title = modal.querySelector("h3");
+    const limitText = modal.querySelector(".stack-header p");
 
-  } else {
+    if (title) title.innerText = "Escolha suas Stacks Free ";
+    if (limitText) limitText.innerText = "Você pode selecionar até 3 stacks";
 
-    const iconToRemove = document.querySelector(
-      `#badgeStack img[data-type="${stack.type}"][data-free="true"]`
-    );
-
-    if (iconToRemove) iconToRemove.remove();
-  }
-
-});
-
-
-    container.appendChild(div);
-  });
-
-  // Atualiza título do modal
-  const title = modal.querySelector("h3");
-  const limitText = modal.querySelector(".stack-header p");
-
-  if (title) title.innerText = "Escolha suas Stacks Free ";
-  if (limitText) limitText.innerText = "Você pode selecionar até 3 stacks";
-
-  modal.classList.add("show");
+    modal.classList.add("show");
 }

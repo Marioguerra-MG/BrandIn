@@ -22,12 +22,18 @@
             <div class="menu-icon" onclick="toggleMenu(event)">☰</div>
 
             <div class="menu" id="menu">
-                <a href="#" id="planLink" onclick="openPlanModal()">Plano Pro 🚀</a>
-                <a href="#" id="stackLink" onclick="openStackOptions()">Adicionar Stack 🔒</a>
-                <a href="#" id="stackLinkFree" onclick="openStackOptionsFree()">Adicionar Stack Free</a>
+                <div class="menu-section-title">PLANOS</div>
 
+                <a href="#" id="planLink" onclick="openPlanModal()">Plano Pro</a>
+                <a href="#">Plano Ultimate (Em breve)</a>
+
+                <div class="menu-divider"></div>
+
+                <div class="menu-section-title">STACKS</div>
+
+                <a href="#" id="stackLink" onclick="openStackOptions()">Adicionar Stack Pro</a>
+                <a href="#" id="stackLinkFree" onclick="openStackOptionsFree()">Adicionar Stack Free</a>
             </div>
-        </div>
     </header>
 
     <!-- ========================= -->
@@ -46,7 +52,7 @@
                 </div>
 
                 <button class="stack-close" onclick="confirmStackSelection()">
-                    Concluir
+                    Adicionar
                 </button>
             </div>
 
@@ -153,7 +159,10 @@
             <div class="plan-info">
                 <p>✔ Até 5 stacks personalizadas</p>
                 <p>✔ Download ilimitado</p>
-                <p>✔ Acesso futuro a novas funções</p>
+                <p>✔ QR Code inteligente com</p>
+                <p style="margin-left:10px;">• WhatsApp</p>
+                <p style="margin-left:10px;">• Instagram</p>
+                <p style="margin-left:10px;">• Portfólio</p>
             </div>
 
             <div class="plan-price">
