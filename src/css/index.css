@@ -249,3 +249,247 @@ button:hover {
 .footer-space {
     height: 20px;
 }
+
+
+/* ========================= */
+/* MODAL BACKDROP */
+/* ========================= */
+
+.plan-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.plan-modal.show {
+  display: flex;
+}
+
+/* ========================= */
+/* CARD DO PLANO */
+/* ========================= */
+
+.plan-content {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 35px;
+  border-radius: 20px;
+  width: 360px;
+  text-align: center;
+  position: relative;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255,255,255,0.4) inset;
+  transform: scale(0.95);
+  animation: scaleIn 0.25s ease forwards;
+}
+
+/* ========================= */
+/* TÍTULO */
+/* ========================= */
+
+.plan-content h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.plan-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.plan-price {
+  margin: 25px 0;
+}
+
+.plan-price h3 {
+  font-size: 28px;
+  margin: 0;
+  color: #0f172a;
+}
+
+.plan-price p {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ========================= */
+/* BOTÃO PREMIUM */
+/* ========================= */
+
+.plan-btn {
+  background: linear-gradient(135deg, #0d6efd, #2563eb);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  box-shadow: 
+    0 10px 20px rgba(37, 99, 235, 0.4);
+}
+
+.plan-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 15px 30px rgba(37, 99, 235, 0.55);
+}
+
+.plan-btn:active {
+  transform: scale(0.98);
+}
+
+/* ========================= */
+/* BOTÃO FECHAR */
+/* ========================= */
+
+.plan-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: none;
+  color: #ff1a1a;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ========================= */
+/* ANIMAÇÕES */
+/* ========================= */
+
+/* ========================= */
+/* MODAL BACKDROP */
+/* ========================= */
+
+.plan-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.plan-modal.show {
+  display: flex;
+}
+
+/* ========================= */
+/* CARD DO PLANO */
+/* ========================= */
+
+.plan-content {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 35px;
+  border-radius: 20px;
+  width: 360px;
+  text-align: center;
+  position: relative;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255,255,255,0.4) inset;
+}
+
+/* ========================= */
+/* TÍTULO */
+/* ========================= */
+
+.plan-content h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.plan-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.plan-price {
+  margin: 25px 0;
+}
+
+.plan-price h3 {
+  font-size: 28px;
+  margin: 0;
+  color: #0f172a;
+}
+
+.plan-price p {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ========================= */
+/* BOTÃO PREMIUM */
+/* ========================= */
+
+.plan-btn {
+  background: linear-gradient(135deg, #0d6efd, #2563eb);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+}
+
+.plan-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.55);
+}
+
+.plan-btn:active {
+  transform: scale(0.98);
+}
+
+/* ========================= */
+/* BOTÃO FECHAR CLEAN */
+/* ========================= */
+
+.plan-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: none;
+  background: none; /* removido fundo */
+  width: auto;
+  height: auto;
+  font-size: 18px;
+  cursor: pointer;
+  color: #64748b;
+  transition: 0.2s ease;
+}
+
+.plan-close:hover {
+  color: #ec0000;
+  transform: rotate(90deg);
+}
+
+

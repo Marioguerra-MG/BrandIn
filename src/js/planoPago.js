@@ -1,4 +1,3 @@
-
 /* ====================== */
 /* VERIFICA SE USUÁRIO É PRO */
 /* ====================== */
@@ -11,7 +10,6 @@ if (urlParams.get("pro") === "true") {
 
 // Define status PRO
 let isProUser = localStorage.getItem("isProUser") === "true";
-
 
 const MAX_STACKS = 5;
 
@@ -40,14 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const totalSelecionado = badgeCount + selectedCount;
 
-        // 🚫 se já bateu o limite
         if (!div.classList.contains("selected") && totalSelecionado >= MAX_STACKS) {
           showToast("Você já selecionou 5 stacks 🚫");
           return;
         }
 
         div.classList.toggle("selected");
-
         updateStackCounter();
       });
 
@@ -68,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updateStackCounter();
+  updateProUI(); // 👈 Atualiza interface PRO
 });
 
 /* ====================== */
@@ -185,11 +182,63 @@ function updateStackCounter() {
   }
 }
 
+/* ====================== */
+/* MODAL PLANO */
+/* ====================== */
 
+function openPlanModal() {
+  const modal = document.getElementById("planModal");
+  if (modal) modal.classList.add("show");
+}
 
+function closePlanModal() {
+  const modal = document.getElementById("planModal");
+  if (modal) modal.classList.remove("show");
+}
 
+function goToCheckout() {
+  window.location.href = "https://pay.kiwify.com.br/9c9siV0";
+}
 
+/* ====================== */
+/* ATUALIZA INTERFACE PRO */
+/* ====================== */
 
+function updateProUI() {
 
+  const planLink = document.getElementById("planLink");
+  const stackLink = document.getElementById("stackLink");
+  const logo = document.getElementById("logoTitle");
 
+  if (isProUser) {
 
+    // 🔓 Abre cadeado
+    if (stackLink) {
+      stackLink.innerHTML = "Adicionar Stack 🔓";
+    }
+
+    // 🚀 Esconde plano
+    if (planLink) {
+      planLink.style.display = "none";
+    }
+
+    // 👑 Logo Premium
+    if (logo && !logo.innerHTML.includes("Premium")) {
+      logo.innerHTML = `
+        Brandin 
+        <span style="
+          font-size:12px;
+          background:gold;
+          color:#000;
+          padding:3px 8px;
+          border-radius:20px;
+          margin-left:8px;
+          font-weight:600;
+        ">Premium</span>
+      `;
+    }
+
+    // Toast opcional
+    showToast("Plano Premium ativado 👑");
+  }
+}
