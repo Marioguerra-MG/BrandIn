@@ -1,7 +1,3 @@
-/* ======================
-   STACKS FREE
-====================== */
-
 const MAX_FREE_STACKS = 3;
 
 function openStackOptionsFree() {
@@ -9,18 +5,13 @@ function openStackOptionsFree() {
     const modal = document.getElementById("stackModal");
     const container = document.getElementById("stackOptions");
     const counter = document.getElementById("stackCounter");
+    const badgeContainer = document.getElementById("badgeStack");
 
-    if (!modal || !container) return;
-
-    // 👇 Define modo antes de qualquer coisa
-    modal.dataset.mode = "free";
+    if (!modal || !container || !badgeContainer) return;
 
     container.innerHTML = "";
 
-    // 🔄 Atualiza contador FREE
     function updateCounter() {
-        const badgeContainer = document.getElementById("badgeStack");
-
         const currentFreeStacks = badgeContainer.querySelectorAll(
             'img[data-free="true"]'
         ).length;
@@ -43,8 +34,6 @@ function openStackOptionsFree() {
 
         div.addEventListener("click", () => {
 
-            const badgeContainer = document.getElementById("badgeStack");
-
             const existingIcon = badgeContainer.querySelector(
                 `img[data-type="${stack.type}"][data-free="true"]`
             );
@@ -53,7 +42,7 @@ function openStackOptionsFree() {
                 'img[data-free="true"]'
             ).length;
 
-            // 🔥 Se já existe → remover
+            // 🔥 Remove se já existir
             if (existingIcon) {
                 existingIcon.remove();
                 div.classList.remove("selected");
@@ -64,7 +53,7 @@ function openStackOptionsFree() {
 
             // 🚫 Limite FREE
             if (currentFreeStacks >= MAX_FREE_STACKS) {
-                showToast("Limite FREE atingido");
+                showToast("Limite FREE atingido 🚫");
                 return;
             }
 
@@ -77,7 +66,6 @@ function openStackOptionsFree() {
 
             icon.addEventListener("click", () => {
                 icon.remove();
-                div.classList.remove("selected");
                 updateCounter();
             });
 
@@ -90,7 +78,7 @@ function openStackOptionsFree() {
         container.appendChild(div);
     });
 
-    // Atualiza texto do modal
+    // Apenas muda texto visual
     const title = modal.querySelector("h3");
     const limitText = modal.querySelector(".stack-header p");
 
@@ -99,5 +87,5 @@ function openStackOptionsFree() {
 
     modal.classList.add("show");
 
-    updateCounter(); // 👈 Atualiza ao abrir
+    updateCounter();
 }
