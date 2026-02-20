@@ -75,7 +75,7 @@ function downloadBadge() {
     link.href = finalCanvas.toDataURL("image/png");
     link.click();
 
-    showToast("Crachá baixado com sucesso! 🎉");
+    showToast("Baixado com sucesso! 🎉");
 
     /* ==========================
        🧹 LIMPAR STACKS
