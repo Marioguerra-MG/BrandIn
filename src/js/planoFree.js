@@ -2,9 +2,9 @@ const MAX_FREE_STACKS = 3;
 
 function openStackOptionsFree() {
 
-    const modal = document.getElementById("stackModal");
-    const container = document.getElementById("stackOptions");
-    const counter = document.getElementById("stackCounter");
+    const modal = document.getElementById("stackModalFree");
+    const container = document.getElementById("stackOptionsFree");
+    const counter = document.getElementById("stackCounterFree");
     const badgeContainer = document.getElementById("badgeStack");
 
     if (!modal || !container || !badgeContainer) return;
@@ -78,14 +78,16 @@ function openStackOptionsFree() {
         container.appendChild(div);
     });
 
-    // Apenas muda texto visual
-    const title = modal.querySelector("h3");
-    const limitText = modal.querySelector(".stack-header p");
-
-    if (title) title.innerText = "Escolha suas Stacks Free 🎁";
-    if (limitText) limitText.innerText = "Você pode selecionar até 3 stacks";
-
     modal.classList.add("show");
-
     updateCounter();
+}
+
+function closeStackModalFree() {
+    const modal = document.getElementById("stackModalFree");
+    if (modal) modal.classList.remove("show");
+}
+
+function confirmStackSelectionFree() {
+    closeStackModalFree();
+    showToast("Stacks Free atualizadas 🎁");
 }
