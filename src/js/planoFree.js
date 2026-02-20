@@ -8,15 +8,19 @@ function openStackOptionsFree() {
 
     const modal = document.getElementById("stackModal");
     const container = document.getElementById("stackOptions");
-    const counter = document.getElementById("stackCounter"); // 👈 PEGANDO O CONTADOR
+    const counter = document.getElementById("stackCounter");
 
     if (!modal || !container) return;
 
+    // 👇 Define modo antes de qualquer coisa
+    modal.dataset.mode = "free";
+
     container.innerHTML = "";
 
-    // 🔄 Função para atualizar contador
+    // 🔄 Atualiza contador FREE
     function updateCounter() {
         const badgeContainer = document.getElementById("badgeStack");
+
         const currentFreeStacks = badgeContainer.querySelectorAll(
             'img[data-free="true"]'
         ).length;
@@ -54,7 +58,7 @@ function openStackOptionsFree() {
                 existingIcon.remove();
                 div.classList.remove("selected");
                 showToast("Stack removida");
-                updateCounter(); // 👈 ATUALIZA
+                updateCounter();
                 return;
             }
 
@@ -64,7 +68,7 @@ function openStackOptionsFree() {
                 return;
             }
 
-            // ➕ Criar nova stack FREE
+            // ➕ Criar stack FREE
             const icon = document.createElement("img");
             icon.src = stack.icon;
             icon.dataset.type = stack.type;
@@ -74,19 +78,19 @@ function openStackOptionsFree() {
             icon.addEventListener("click", () => {
                 icon.remove();
                 div.classList.remove("selected");
-                updateCounter(); // 👈 ATUALIZA
+                updateCounter();
             });
 
             badgeContainer.appendChild(icon);
             div.classList.add("selected");
 
-            updateCounter(); // 👈 ATUALIZA
+            updateCounter();
         });
 
         container.appendChild(div);
     });
 
-    // Atualiza título do modal
+    // Atualiza texto do modal
     const title = modal.querySelector("h3");
     const limitText = modal.querySelector(".stack-header p");
 
@@ -95,12 +99,5 @@ function openStackOptionsFree() {
 
     modal.classList.add("show");
 
-    updateCounter(); // 👈 ATUALIZA AO ABRIR
+    updateCounter(); // 👈 Atualiza ao abrir
 }
-
-
-// Marca o modal como FREE
-modal.dataset.mode = "free";
-
-modal.classList.add("show");
-updateCounter();

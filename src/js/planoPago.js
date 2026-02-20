@@ -81,13 +81,16 @@ function openStackOptions() {
     showToast("Stacks disponíveis apenas no Plano Pro 🔒");
     return;
   }
-  
+
   const modal = document.getElementById("stackModal");
-  if (modal) modal.classList.add("show");
-  modal.dataset.mode = "pro";
+  if (!modal) return;
+
+  modal.dataset.mode = "pro"; // 👈 define modo
+  modal.classList.add("show");
 
   updateStackCounter();
 }
+
 
 /* ====================== */
 function closeStackModal() {
@@ -95,7 +98,7 @@ function closeStackModal() {
   if (modal) modal.classList.remove("show");
 }
 
-/* ====================== */
+/* ====================a== */
 function confirmStackSelection() {
 
   const selectedOptions = document.querySelectorAll(".stack-option.selected");
@@ -148,20 +151,38 @@ function confirmStackSelection() {
 /* ====================== */
 function updateStackCounter() {
 
+  const modal = document.getElementById("stackModal");
   const counter = document.getElementById("stackCounter");
   const stackContainer = document.getElementById("badgeStack");
   const options = document.querySelectorAll(".stack-option");
 
-  if (!counter || !stackContainer) return;
+  if (!counter || !stackContainer || !modal) return;
 
-  const badgeCount = stackContainer.querySelectorAll("img").length;
-  const selectedCount = document.querySelectorAll(".stack-option.selected").length;
+  const mode = modal.dataset.mode || "pro";
+
+  let badgeCount = 0;
+  let selectedCount = document.querySelectorAll(".stack-option.selected").length;
+  let max = MAX_STACKS;
+
+  if (mode === "pro") {
+
+    // Conta apenas stacks PRO (sem data-free)
+    badgeCount = stackContainer.querySelectorAll('img:not([data-free="true"])').length;
+    max = MAX_STACKS;
+
+  } else if (mode === "free") {
+
+    // Conta apenas stacks FREE
+    badgeCount = stackContainer.querySelectorAll('img[data-free="true"]').length;
+    max = MAX_FREE_STACKS;
+
+  }
 
   const total = badgeCount + selectedCount;
 
-  counter.textContent = `${total}/${MAX_STACKS} stacks`;
+  counter.textContent = `${total}/${max} stacks`;
 
-  if (total >= MAX_STACKS) {
+  if (total >= max) {
 
     counter.parentElement.classList.add("limit-reached");
 
@@ -182,6 +203,7 @@ function updateStackCounter() {
     });
   }
 }
+
 
 /* ====================== */
 /* MODAL PLANO */
