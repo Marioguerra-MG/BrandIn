@@ -80,7 +80,69 @@ const stacks = [
   ========================== */
   { type: "figma", name: "Figma", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
   { type: "git", name: "Git", icon: "https://cdn-icons-png.flaticon.com/512/919/919847.png" },
-  { type: "github", name: "GitHub", icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png" }
+  { type: "github", name: "GitHub", icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png" },
+
+
+  /* =========================
+   🤖 INTELIGÊNCIA ARTIFICIAL
+========================== */
+{ type: "openai", name: "OpenAI API", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
+{ type: "huggingface", name: "Hugging Face", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "tensorflow", name: "TensorFlow", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "pytorch", name: "PyTorch", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "langchain", name: "LangChain", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
+
+/* =========================
+   🧪 TESTES & QUALIDADE
+========================== */
+{ type: "jest", name: "Jest", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
+{ type: "cypress", name: "Cypress", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
+{ type: "playwright", name: "Playwright", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
+{ type: "selenium", name: "Selenium", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
+
+/* =========================
+   📊 MONITORAMENTO & ANALYTICS
+========================== */
+{ type: "sentry", name: "Sentry", icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
+{ type: "datadog", name: "Datadog", icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
+{ type: "grafana", name: "Grafana", icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
+{ type: "google-analytics", name: "Google Analytics", icon: "https://cdn-icons-png.flaticon.com/512/873/873118.png" },
+
+/* =========================
+   💳 PAGAMENTOS & SAAS
+========================== */
+{ type: "stripe", name: "Stripe", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "paypal", name: "PayPal", icon: "https://cdn-icons-png.flaticon.com/512/888/888870.png" },
+{ type: "mercadopago", name: "Mercado Pago", icon: "https://cdn-icons-png.flaticon.com/512/888/888870.png" },
+
+/* =========================
+   📦 AUTOMAÇÃO & INTEGRAÇÕES
+========================== */
+{ type: "zapier", name: "Zapier", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "make", name: "Make (Integromat)", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "n8n", name: "n8n", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+
+/* =========================
+   🛠 PRODUTIVIDADE & GESTÃO
+========================== */
+{ type: "notion", name: "Notion", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "jira", name: "Jira", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+{ type: "trello", name: "Trello", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
+
+/* =========================
+   🔐 SEGURANÇA
+========================== */
+{ type: "auth0", name: "Auth0", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
+{ type: "clerk", name: "Clerk", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
+{ type: "okta", name: "Okta", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
+
+/* =========================
+   🚀 DEPLOY & HOSTING
+========================== */
+{ type: "vercel", name: "Vercel", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
+{ type: "netlify", name: "Netlify", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
+{ type: "railway", name: "Railway", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
+{ type: "render", name: "Render", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" }
 
 ];
 

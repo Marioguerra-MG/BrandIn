@@ -58,58 +58,77 @@ function generateQRCode() {
   if (!value) return;
 
   let link = value;
-  let icon = ""; // ícone a exibir (WhatsApp / Instagram / Portfólio)
+  let iconClass = "";
 
-  // Detecta número de WhatsApp (apenas dígitos)
   const digits = value.replace(/\D/g, "");
+
+  // ======================
+  // DETECÇÃO WHATSAPP
+  // ======================
   if (digits.length >= 10) {
     link = `https://wa.me/${digits}`;
-    icon = "📱"; // ou "🟢" se quiser ícone WhatsApp
-  } 
-  // Detecta link do Instagram
-  else if (value.includes("instagram.com") || value.startsWith("@")) {
-    let username = value.replace("@", "");
-    link = `https://instagram.com/${username}`;
-    icon = "📸"; // ícone Instagram
-  } 
-  // Caso seja outro link (portfólio)
-  else if (value.startsWith("http")) {
-    link = value;
-    icon = "🌐"; // ícone portfólio
-  } else {
-    // Qualquer texto simples
-    link = "https://" + value;
-    icon = "🌐";
+    iconClass = "fa-brands fa-whatsapp";
   }
 
-  // Cria QR Code
-  const qr = new QRCode(qrCodeContainer, {
+  // ======================
+  // DETECÇÃO INSTAGRAM
+  // ======================
+  else if (value.includes("instagram.com") || value.startsWith("@")) {
+    let username = value
+      .replace("https://instagram.com/", "")
+      .replace("http://instagram.com/", "")
+      .replace("@", "")
+      .replace("/", "");
+
+    link = `https://instagram.com/${username}`;
+    iconClass = "fa-brands fa-instagram";
+  }
+
+  // ======================
+  // OUTROS LINKS
+  // ======================
+  else if (value.startsWith("http")) {
+    link = value;
+    iconClass = "fa-solid fa-globe";
+  }
+
+  else {
+    link = "https://" + value;
+    iconClass = "fa-solid fa-globe";
+  }
+
+  // ======================
+  // CRIAR QR CODE
+  // ======================
+  new QRCode(qrCodeContainer, {
     text: link,
     width: 120,
     height: 120,
-    correctLevel: QRCode.CorrectLevel.H // máxima correção de erros
+    correctLevel: QRCode.CorrectLevel.H
   });
 
-  // Adiciona ícone central seguro
+  // ======================
+  // CRIAR ÍCONE CENTRAL
+  // ======================
   const iconEl = document.createElement("div");
   iconEl.id = "qrIcon";
-  iconEl.innerText = icon;
-  iconEl.style.fontSize = "24px";
+  iconEl.innerHTML = `<i class="${iconClass}"></i>`;
+
   iconEl.style.position = "absolute";
   iconEl.style.top = "50%";
   iconEl.style.left = "50%";
   iconEl.style.transform = "translate(-50%, -50%)";
-  iconEl.style.background = "white"; // círculo branco para destacar
+  iconEl.style.background = "white";
   iconEl.style.borderRadius = "50%";
-  iconEl.style.width = "32px";
-  iconEl.style.height = "32px";
+  iconEl.style.width = "26px";
+  iconEl.style.height = "26px";
   iconEl.style.display = "flex";
   iconEl.style.justifyContent = "center";
   iconEl.style.alignItems = "center";
-  iconEl.style.pointerEvents = "none"; // não interfere no QR
+  iconEl.style.pointerEvents = "none";
+
   qrCodeContainer.appendChild(iconEl);
 }
-
 
 /* ======================
    SISTEMA DE ETAPAS

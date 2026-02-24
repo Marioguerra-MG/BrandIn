@@ -39,3 +39,19 @@
     transition: 0.4s ease;
 }
 
+#qrIcon i {
+  font-size: 18px;
+}
+
+/* WhatsApp verde oficial */
+#qrIcon .fa-whatsapp {
+  color: #25D366;
+}
+
+/* Instagram com degradê */
+#qrIcon .fa-instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
