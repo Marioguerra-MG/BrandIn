@@ -1,112 +1,73 @@
+/* ======================
+   LISTA DE STACKS
+   DEVICON PNG - 100% SEGURO PARA DOWNLOAD
+====================== */
+
 const stacks = [
 
-  /* =========================
-     🌐 FRONT-END
-  ========================== */
-  { type: "html", name: "HTML5", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/html5.svg" },
-  { type: "css", name: "CSS3", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" },
-  { type: "javascript", name: "JavaScript", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/javascript.svg" },
-  { type: "typescript", name: "TypeScript", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/typescript.svg" },
-  { type: "react", name: "React", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/react.svg" },
-  { type: "nextjs", name: "Next.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nextdotjs.svg" },
-  { type: "vue", name: "Vue.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vuedotjs.svg" },
-  { type: "angular", name: "Angular", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/angular.svg" },
-  { type: "svelte", name: "Svelte", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/svelte.svg" },
-  { type: "tailwind", name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tailwindcss.svg" },
+  /* 🌐 FRONT-END */
+  { type: "html", name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.png" },
+  { type: "css", name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.png" },
+  { type: "javascript", name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.png" },
+  { type: "typescript", name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.png" },
+  { type: "react", name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.png" },
+  { type: "nextjs", name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.png" },
+  { type: "vue", name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.png" },
+  { type: "angular", name: "Angular", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.png" },
+  { type: "svelte", name: "Svelte", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.png" },
+  { type: "tailwind", name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.png" },
 
-  /* =========================
-     🖥 BACK-END
-  ========================== */
-  { type: "node", name: "Node.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nodedotjs.svg" },
-  { type: "express", name: "Express.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/express.svg" },
-  { type: "nestjs", name: "NestJS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nestjs.svg" },
-  { type: "fastify", name: "Fastify", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/fastify.svg" },
-  { type: "python", name: "Python", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/python.svg" },
-  { type: "django", name: "Django", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/django.svg" },
-  { type: "flask", name: "Flask", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flask.svg" },
-  { type: "java", name: "Java", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openjdk.svg" },
-  { type: "spring", name: "Spring Boot", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/spring.svg" },
-  { type: "php", name: "PHP", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/php.svg" },
-  { type: "laravel", name: "Laravel", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/laravel.svg" },
-  { type: "ruby", name: "Ruby", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ruby.svg" },
-  { type: "rails", name: "Ruby on Rails", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/rubyonrails.svg" },
-  { type: "csharp", name: "C#", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/csharp.svg" },
-  { type: "dotnet", name: ".NET", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/dotnet.svg" },
+  /* 🖥 BACK-END */
+  { type: "node", name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.png" },
+  { type: "express", name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.png" },
+  { type: "nestjs", name: "NestJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.png" },
+  { type: "fastify", name: "Fastify", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastify/fastify-original.png" },
+  { type: "python", name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.png" },
+  { type: "django", name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.png" },
+  { type: "flask", name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.png" },
+  { type: "java", name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.png" },
+  { type: "spring", name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.png" },
+  { type: "php", name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.png" },
+  { type: "laravel", name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.png" },
+  { type: "ruby", name: "Ruby", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.png" },
+  { type: "rails", name: "Ruby on Rails", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-original-wordmark.png" },
+  { type: "csharp", name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.png" },
+  { type: "dotnet", name: ".NET", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.png" },
 
-  /* =========================
-     🗄 DATABASE
-  ========================== */
-  { type: "mongodb", name: "MongoDB", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mongodb.svg" },
-  { type: "mysql", name: "MySQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mysql.svg" },
-  { type: "postgresql", name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/postgresql.svg" },
-  { type: "redis", name: "Redis", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/redis.svg" },
+  /* 🗄 DATABASE */
+  { type: "mongodb", name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.png" },
+  { type: "mysql", name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.png" },
+  { type: "postgresql", name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.png" },
+  { type: "redis", name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.png" },
 
-  /* =========================
-     ☁️ CLOUD
-  ========================== */
-  { type: "aws", name: "AWS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" },
-  { type: "azure", name: "Microsoft Azure", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" },
-  { type: "gcp", name: "Google Cloud", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" },
-  { type: "firebase", name: "Firebase", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/firebase.svg" },
+  /* ☁️ CLOUD */
+  { type: "aws", name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.png" },
+  { type: "azure", name: "Microsoft Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.png" },
+  { type: "gcp", name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.png" },
+  { type: "firebase", name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.png" },
 
-  /* =========================
-     ⚙️ DEVOPS
-  ========================== */
-  { type: "docker", name: "Docker", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" },
-  { type: "kubernetes", name: "Kubernetes", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" },
-  { type: "terraform", name: "Terraform", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" },
-  { type: "ansible", name: "Ansible", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ansible.svg" },
-  { type: "linux", name: "Linux", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" },
+  /* ⚙️ DEVOPS */
+  { type: "docker", name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.png" },
+  { type: "kubernetes", name: "Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.png" },
+  { type: "terraform", name: "Terraform", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.png" },
+  { type: "linux", name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.png" },
 
-  /* =========================
-     🔗 API & DATA
-  ========================== */
-  { type: "graphql", name: "GraphQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/graphql.svg" },
+  /* 🔗 API */
+  { type: "graphql", name: "GraphQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.png" },
 
-  /* =========================
-     📱 MOBILE
-  ========================== */
-  { type: "react-native", name: "React Native", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/react.svg" },
-  { type: "flutter", name: "Flutter", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flutter.svg" },
-  { type: "electron", name: "Electron", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/electron.svg" },
+  /* 📱 MOBILE */
+  { type: "react-native", name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.png" },
+  { type: "flutter", name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.png" },
+  { type: "electron", name: "Electron", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.png" },
 
-  /* =========================
-     🎨 DESIGN & COLLAB
-  ========================== */
-  { type: "figma", name: "Figma", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg" },
-  { type: "git", name: "Git", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/git.svg" },
-  { type: "github", name: "GitHub", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" },
+  /* 🎨 DESIGN */
+  { type: "figma", name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.png" },
+  { type: "git", name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.png" },
+  { type: "github", name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.png" },
 
-  /* =========================
-     🤖 IA
-  ========================== */
-  { type: "openai", name: "OpenAI API", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" },
-  { type: "huggingface", name: "Hugging Face", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/huggingface.svg" },
-  { type: "tensorflow", name: "TensorFlow", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tensorflow.svg" },
-  { type: "pytorch", name: "PyTorch", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/pytorch.svg" },
-  { type: "langchain", name: "LangChain", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/langchain.svg" },
-
-  /* =========================
-     🧪 TESTES
-  ========================== */
-  { type: "jest", name: "Jest", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jest.svg" },
-  { type: "cypress", name: "Cypress", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cypress.svg" },
-  { type: "playwright", name: "Playwright", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/playwright.svg" },
-  { type: "selenium", name: "Selenium", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/selenium.svg" },
-
-  /* =========================
-     💳 PAGAMENTOS
-  ========================== */
-  { type: "stripe", name: "Stripe", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg" },
-  { type: "paypal", name: "PayPal", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/paypal.svg" },
-  { type: "mercadopago", name: "Mercado Pago", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mercadopago.svg" },
-
-  /* =========================
-     🚀 DEPLOY
-  ========================== */
-  { type: "vercel", name: "Vercel", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg" },
-  { type: "netlify", name: "Netlify", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/netlify.svg" },
-  { type: "railway", name: "Railway", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/railway.svg" },
-  { type: "render", name: "Render", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/render.svg" }
+  /* 🚀 DEPLOY */
+  { type: "vercel", name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.png" },
+  { type: "netlify", name: "Netlify", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.png" },
+  { type: "railway", name: "Railway", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/railway/railway-original.png" }
 
 ];
