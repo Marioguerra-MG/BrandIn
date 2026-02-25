@@ -13,6 +13,25 @@ const previewName = document.getElementById("previewName");
 const previewRole = document.getElementById("previewRole");
 const qrCodeContainer = document.getElementById("qrCode");
 
+/////////////////////////////////////////
+
+
+const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+const isInAppBrowser =
+  /FBAN|FBAV|Instagram|Messenger/i.test(userAgent);
+
+window.addEventListener("DOMContentLoaded", () => {
+  const block = document.getElementById("externalBrowserBlock");
+
+  if (isInAppBrowser && block) {
+    block.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    document.body.style.pointerEvents = "none";
+    block.style.pointerEvents = "all";
+  }
+});
+
 /* ======================
    VALIDAÇÃO DO BOTÃO DOWNLOAD
 ====================== */

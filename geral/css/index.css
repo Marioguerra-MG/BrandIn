@@ -616,3 +616,49 @@ button:hover {
   color: #ec0000;
   transform: rotate(90deg);
 }
+/*--------------------*/
+.external-block {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  padding: 20px;
+}
+
+.external-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  max-width: 350px;
+  width: 100%;
+}
+
+.external-box h2 {
+  margin-bottom: 15px;
+}
+
+.external-box p {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.external-box .steps {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.external-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
