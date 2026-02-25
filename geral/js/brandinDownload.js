@@ -4,6 +4,10 @@ function downloadBadge() {
   const badge = document.getElementById("badge");
   if (!badge) return;
 
+  // Detecta navegador interno (Facebook / Instagram)
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const isFacebookBrowser = /FBAN|FBAV|Instagram/i.test(userAgent);
+
   // 🔥 ABRE A ABA IMEDIATAMENTE (ANTI BLOQUEIO)
   const newTab = window.open("", "_blank");
 
@@ -12,7 +16,7 @@ function downloadBadge() {
     return;
   }
 
-  // Tela temporária enquanto gera
+  // Tela temporária
   newTab.document.write(`
     <html>
       <head>
@@ -37,7 +41,6 @@ function downloadBadge() {
   `);
   newTab.document.close();
 
-  // 🎨 Pega cor do badge
   const badgeStyle = window.getComputedStyle(badge);
   const badgeBgColor = badgeStyle.backgroundColor || "#e6d2b5";
 
@@ -53,7 +56,7 @@ function downloadBadge() {
     finalCanvas.width = 1080;
     finalCanvas.height = 1350;
 
-    // 🎨 Fundo gradiente
+    // 🎨 Fundo
     const gradient = ctx.createLinearGradient(0, 0, 0, finalCanvas.height);
     gradient.addColorStop(0, badgeBgColor);
     gradient.addColorStop(1, darkenColor(badgeBgColor, 25));
@@ -76,53 +79,43 @@ function downloadBadge() {
     ctx.drawImage(badgeCanvas, centerX, centerY, badgeWidth, badgeHeight);
     ctx.shadowColor = "transparent";
 
-    // 💎 Marca d'água
+    // 💎 Marca grande discreta
     ctx.save();
-    ctx.globalAlpha = 0.06;
+    ctx.globalAlpha = 0.05;
     ctx.fillStyle = "#000";
     ctx.font = "bold 90px Poppins";
     ctx.textAlign = "center";
     ctx.fillText("Brandin", finalCanvas.width / 2, 200);
     ctx.restore();
 
-
+    // 🔒 Marca site se não for PRO
     if (!isProUser) {
 
-      const siteText = "brand-in-henna.vercel.app";
-
       ctx.save();
-
-      ctx.globalAlpha = 0.10; // mais discreto
-      ctx.fillStyle = "#111"; // não preto puro
-      ctx.font = "500 50px Poppins";
+      ctx.globalAlpha = 0.08;
+      ctx.fillStyle = "#222";
+      ctx.font = "500 42px Poppins";
       ctx.textAlign = "center";
 
-      // 🔥 pequena sombra elegante
-      ctx.shadowColor = "rgba(0,0,0,0.2)";
-      ctx.shadowBlur = 4;
-      ctx.shadowOffsetY = 2;
-
       ctx.fillText(
-        siteText,
+        "brand-in-henna.vercel.app",
         finalCanvas.width / 2,
-        finalCanvas.height - 35
+        finalCanvas.height - 40
       );
 
       ctx.restore();
     }
 
-
-    // 📱 Detecta dispositivo
-    const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+    // 📱 Detecta mobile
+    const isMobile = /iPhone|Android/i.test(userAgent);
     const instructionText = isMobile
-      ? "📲 Segure na imagem e toque em Salvar"
+      ? "📲 Segure na imagem para salvar"
       : "💻 Clique com botão direito e escolha 'Salvar imagem'";
 
     finalCanvas.toBlob(function (blob) {
 
       const url = URL.createObjectURL(blob);
 
-      // 🔥 Atualiza a aba já aberta
       newTab.document.open();
       newTab.document.write(`
   <html>
@@ -145,19 +138,25 @@ function downloadBadge() {
 
         img {
           max-width: 90%;
-          max-height: 70vh;
+          max-height: 65vh;
           border-radius: 20px;
           box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
 
         .instruction {
           margin-top: 20px;
-          font-size: 18px;
+          font-size: 17px;
           opacity: 0.9;
         }
 
+        .warning {
+          margin-top: 15px;
+          font-size: 14px;
+          opacity: 0.7;
+        }
+
         button {
-          margin-top: 25px;
+          margin-top: 20px;
           padding: 12px 24px;
           border-radius: 30px;
           border: none;
@@ -170,7 +169,12 @@ function downloadBadge() {
         }
 
         button:hover {
-          opacity: 0.8;
+          opacity: 0.85;
+        }
+
+        .external-btn {
+          background: #1877f2;
+          color: white;
         }
       </style>
     </head>
@@ -182,19 +186,30 @@ function downloadBadge() {
         ${instructionText}
       </div>
 
+      ${isFacebookBrowser ? `
+        <div class="warning">
+          O navegador do Facebook pode bloquear o download.
+        </div>
+
+        <a href="https://brand-in-henna.vercel.app" target="_blank">
+          <button class="external-btn">
+            🌍 Abrir no navegador externo
+          </button>
+        </a>
+      ` : ""}
+
       <button onclick="window.close()">
         ← Voltar para o Brandin
       </button>
 
     </body>
   </html>
-`);
+      `);
       newTab.document.close();
 
     }, "image/png");
 
     showToast("Imagem pronta! 🚀");
-
     clearStacks();
 
     setTimeout(() => {
