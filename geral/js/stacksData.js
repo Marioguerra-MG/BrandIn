@@ -1,6 +1,6 @@
 /* ======================
    LISTA DE STACKS
-   EDITE SOMENTE AQUI
+   ÍCONES OFICIAIS - SIMPLE ICONS CDN
 ====================== */
 
 const stacks = [
@@ -8,141 +8,102 @@ const stacks = [
   /* =========================
      🌐 FRONT-END
   ========================== */
-  { type: "html", name: "HTML5", icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png" },
-  { type: "css", name: "CSS3", icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png" },
-  { type: "javascript", name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png" },
-  { type: "typescript", name: "TypeScript", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png" },
-  { type: "react", name: "React", icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png" },
-  { type: "nextjs", name: "Next.js", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
-  { type: "vue", name: "Vue.js", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968674.png" },
-  { type: "angular", name: "Angular", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968667.png" },
-  { type: "svelte", name: "Svelte", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968704.png" },
-  { type: "tailwind", name: "Tailwind CSS", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png" },
+  { type: "html", name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
+  { type: "css", name: "CSS3", icon: "https://cdn.simpleicons.org/css3/1572B6" },
+  { type: "javascript", name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+  { type: "typescript", name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+  { type: "react", name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+  { type: "nextjs", name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/000000" },
+  { type: "vue", name: "Vue.js", icon: "https://cdn.simpleicons.org/vuedotjs/4FC08D" },
+  { type: "angular", name: "Angular", icon: "https://cdn.simpleicons.org/angular/DD0031" },
+  { type: "svelte", name: "Svelte", icon: "https://cdn.simpleicons.org/svelte/FF3E00" },
+  { type: "tailwind", name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
 
   /* =========================
      🖥 BACK-END
   ========================== */
-  { type: "node", name: "Node.js", icon: "https://cdn-icons-png.flaticon.com/512/919/919825.png" },
-  { type: "express", name: "Express.js", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-  { type: "nestjs", name: "NestJS", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-  { type: "fastify", name: "Fastify", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-  { type: "python", name: "Python", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png" },
-  { type: "django", name: "Django", icon: "https://cdn-icons-png.flaticon.com/512/919/919837.png" },
-  { type: "flask", name: "Flask", icon: "https://cdn-icons-png.flaticon.com/512/919/919837.png" },
-  { type: "java", name: "Java", icon: "https://cdn-icons-png.flaticon.com/512/226/226777.png" },
-  { type: "spring", name: "Spring Boot", icon: "https://cdn-icons-png.flaticon.com/512/919/919834.png" },
-  { type: "php", name: "PHP", icon: "https://cdn-icons-png.flaticon.com/512/919/919830.png" },
-  { type: "laravel", name: "Laravel", icon: "https://cdn-icons-png.flaticon.com/512/919/919835.png" },
-  { type: "ruby", name: "Ruby", icon: "https://cdn-icons-png.flaticon.com/512/919/919842.png" },
-  { type: "rails", name: "Ruby on Rails", icon: "https://cdn-icons-png.flaticon.com/512/919/919842.png" },
-  { type: "csharp", name: "C#", icon: "https://cdn-icons-png.flaticon.com/512/6132/6132221.png" },
-  { type: "dotnet", name: ".NET", icon: "https://cdn-icons-png.flaticon.com/512/6132/6132221.png" },
+  { type: "node", name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+  { type: "express", name: "Express.js", icon: "https://cdn.simpleicons.org/express/000000" },
+  { type: "nestjs", name: "NestJS", icon: "https://cdn.simpleicons.org/nestjs/E0234E" },
+  { type: "fastify", name: "Fastify", icon: "https://cdn.simpleicons.org/fastify/000000" },
+  { type: "python", name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
+  { type: "django", name: "Django", icon: "https://cdn.simpleicons.org/django/092E20" },
+  { type: "flask", name: "Flask", icon: "https://cdn.simpleicons.org/flask/000000" },
+  { type: "java", name: "Java", icon: "https://cdn.simpleicons.org/openjdk/ED8B00" },
+  { type: "spring", name: "Spring Boot", icon: "https://cdn.simpleicons.org/spring/6DB33F" },
+  { type: "php", name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+  { type: "laravel", name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" },
+  { type: "ruby", name: "Ruby", icon: "https://cdn.simpleicons.org/ruby/CC342D" },
+  { type: "rails", name: "Ruby on Rails", icon: "https://cdn.simpleicons.org/rubyonrails/D30001" },
+  { type: "csharp", name: "C#", icon: "https://cdn.simpleicons.org/dotnet/512BD4" },
+  { type: "dotnet", name: ".NET", icon: "https://cdn.simpleicons.org/dotnet/512BD4" },
 
   /* =========================
      🗄 DATABASE
   ========================== */
-  { type: "mongodb", name: "MongoDB", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-  { type: "mysql", name: "MySQL", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-  { type: "postgresql", name: "PostgreSQL", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png" },
-  { type: "redis", name: "Redis", icon: "https://cdn-icons-png.flaticon.com/512/919/919853.png" },
+  { type: "mongodb", name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+  { type: "mysql", name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
+  { type: "postgresql", name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
+  { type: "redis", name: "Redis", icon: "https://cdn.simpleicons.org/redis/DC382D" },
 
   /* =========================
      ☁️ CLOUD
   ========================== */
-  { type: "aws", name: "AWS", icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
-  { type: "azure", name: "Microsoft Azure", icon: "https://cdn-icons-png.flaticon.com/512/873/873107.png" },
-  { type: "gcp", name: "Google Cloud", icon: "https://cdn-icons-png.flaticon.com/512/873/873118.png" },
-  { type: "firebase", name: "Firebase", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png" },
+  { type: "aws", name: "AWS", icon: "https://cdn.simpleicons.org/amazonaws/232F3E" },
+  { type: "azure", name: "Microsoft Azure", icon: "https://cdn.simpleicons.org/microsoftazure/0078D4" },
+  { type: "gcp", name: "Google Cloud", icon: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+  { type: "firebase", name: "Firebase", icon: "https://cdn.simpleicons.org/firebase/FFCA28" },
 
   /* =========================
      ⚙️ DEVOPS & INFRA
   ========================== */
-  { type: "docker", name: "Docker", icon: "https://cdn-icons-png.flaticon.com/512/919/919853.png" },
-  { type: "kubernetes", name: "Kubernetes", icon: "https://cdn-icons-png.flaticon.com/512/919/919852.png" },
-  { type: "terraform", name: "Terraform", icon: "https://cdn-icons-png.flaticon.com/512/906/906334.png" },
-  { type: "ansible", name: "Ansible", icon: "https://cdn-icons-png.flaticon.com/512/906/906334.png" },
-  { type: "linux", name: "Linux", icon: "https://cdn-icons-png.flaticon.com/512/6124/6124995.png" },
+  { type: "docker", name: "Docker", icon: "https://cdn.simpleicons.org/docker/2496ED" },
+  { type: "kubernetes", name: "Kubernetes", icon: "https://cdn.simpleicons.org/kubernetes/326CE5" },
+  { type: "terraform", name: "Terraform", icon: "https://cdn.simpleicons.org/terraform/7B42BC" },
+  { type: "ansible", name: "Ansible", icon: "https://cdn.simpleicons.org/ansible/EE0000" },
+  { type: "linux", name: "Linux", icon: "https://cdn.simpleicons.org/linux/FCC624" },
 
   /* =========================
      🔗 API & DATA
   ========================== */
-  { type: "graphql", name: "GraphQL", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
+  { type: "graphql", name: "GraphQL", icon: "https://cdn.simpleicons.org/graphql/E10098" },
 
   /* =========================
      📱 MOBILE & DESKTOP
   ========================== */
-  { type: "react-native", name: "React Native", icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png" },
-  { type: "flutter", name: "Flutter", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-  { type: "electron", name: "Electron", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
+  { type: "react-native", name: "React Native", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+  { type: "flutter", name: "Flutter", icon: "https://cdn.simpleicons.org/flutter/02569B" },
+  { type: "electron", name: "Electron", icon: "https://cdn.simpleicons.org/electron/47848F" },
 
   /* =========================
      🎨 DESIGN & COLLAB
   ========================== */
-  { type: "figma", name: "Figma", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-  { type: "git", name: "Git", icon: "https://cdn-icons-png.flaticon.com/512/919/919847.png" },
-  { type: "github", name: "GitHub", icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png" },
-
+  { type: "figma", name: "Figma", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
+  { type: "git", name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
+  { type: "github", name: "GitHub", icon: "https://cdn.simpleicons.org/github/181717" },
 
   /* =========================
-   🤖 INTELIGÊNCIA ARTIFICIAL
-========================== */
-{ type: "openai", name: "OpenAI API", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
-{ type: "huggingface", name: "Hugging Face", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "tensorflow", name: "TensorFlow", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "pytorch", name: "PyTorch", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "langchain", name: "LangChain", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
+     🤖 IA
+  ========================== */
+  { type: "openai", name: "OpenAI", icon: "https://cdn.simpleicons.org/openai/412991" },
+  { type: "huggingface", name: "Hugging Face", icon: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+  { type: "tensorflow", name: "TensorFlow", icon: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
+  { type: "pytorch", name: "PyTorch", icon: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
+  { type: "langchain", name: "LangChain", icon: "https://cdn.simpleicons.org/langchain/000000" },
 
-/* =========================
-   🧪 TESTES & QUALIDADE
-========================== */
-{ type: "jest", name: "Jest", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-{ type: "cypress", name: "Cypress", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-{ type: "playwright", name: "Playwright", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
-{ type: "selenium", name: "Selenium", icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png" },
+  /* =========================
+     💳 PAGAMENTOS
+  ========================== */
+  { type: "stripe", name: "Stripe", icon: "https://cdn.simpleicons.org/stripe/635BFF" },
+  { type: "paypal", name: "PayPal", icon: "https://cdn.simpleicons.org/paypal/00457C" },
+  { type: "mercadopago", name: "Mercado Pago", icon: "https://cdn.simpleicons.org/mercadopago/00B1EA" },
 
-/* =========================
-   📊 MONITORAMENTO & ANALYTICS
-========================== */
-{ type: "sentry", name: "Sentry", icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
-{ type: "datadog", name: "Datadog", icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
-{ type: "grafana", name: "Grafana", icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
-{ type: "google-analytics", name: "Google Analytics", icon: "https://cdn-icons-png.flaticon.com/512/873/873118.png" },
-
-/* =========================
-   💳 PAGAMENTOS & SAAS
-========================== */
-{ type: "stripe", name: "Stripe", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "paypal", name: "PayPal", icon: "https://cdn-icons-png.flaticon.com/512/888/888870.png" },
-{ type: "mercadopago", name: "Mercado Pago", icon: "https://cdn-icons-png.flaticon.com/512/888/888870.png" },
-
-/* =========================
-   📦 AUTOMAÇÃO & INTEGRAÇÕES
-========================== */
-{ type: "zapier", name: "Zapier", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "make", name: "Make (Integromat)", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "n8n", name: "n8n", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-
-/* =========================
-   🛠 PRODUTIVIDADE & GESTÃO
-========================== */
-{ type: "notion", name: "Notion", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "jira", name: "Jira", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-{ type: "trello", name: "Trello", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png" },
-
-/* =========================
-   🔐 SEGURANÇA
-========================== */
-{ type: "auth0", name: "Auth0", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
-{ type: "clerk", name: "Clerk", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
-{ type: "okta", name: "Okta", icon: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
-
-/* =========================
-   🚀 DEPLOY & HOSTING
-========================== */
-{ type: "vercel", name: "Vercel", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
-{ type: "netlify", name: "Netlify", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
-{ type: "railway", name: "Railway", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
-{ type: "render", name: "Render", icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png" }
+  /* =========================
+     🚀 DEPLOY
+  ========================== */
+  { type: "vercel", name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/000000" },
+  { type: "netlify", name: "Netlify", icon: "https://cdn.simpleicons.org/netlify/00C7B7" },
+  { type: "railway", name: "Railway", icon: "https://cdn.simpleicons.org/railway/000000" },
+  { type: "render", name: "Render", icon: "https://cdn.simpleicons.org/render/46E3B7" }
 
 ];
-
