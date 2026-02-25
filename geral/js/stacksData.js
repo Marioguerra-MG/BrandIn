@@ -8,8 +8,9 @@ const stacks = [
   /* =========================
      🌐 FRONT-END
   ========================== */
-  { type: "html", name: "HTML5", icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png" },
-  { type: "css", name: "CSS3", icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png" },
+  
+  { type: "html", name: "HTML5", icon: "geral/img/frontEnd/html5.png" },
+  { type: "css", name: "CSS3", icon: "geral/img/frontEnd/css.png" },
   { type: "javascript", name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png" },
   { type: "typescript", name: "TypeScript", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png" },
   { type: "react", name: "React", icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png" },

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="geral/css/toast.css">
     <link rel="stylesheet" href="geral/css/planoPago.css">
     <link rel="stylesheet" href="geral/css/selecaoDeCor.css">
+    <link rel="stylesheet" href="geral/css/modal.css">
 
 </head>
 
@@ -38,13 +39,32 @@
 
                 <a href="#" id="stackLink" onclick="openStackOptions()">Adicionar Stack Pro</a>
                 <a href="#" id="stackLinkFree" onclick="openStackOptionsFree()">Adicionar Stack Free</a>
+                <a href="#" id="creditos">Créditos</a>
 
                 <div class="info">
                     <div class="menu-section-title">SUPORTE</div>
                     <p id="infoEmail">nexleadnexlead@gmail.com</p>
                 </div>
+
             </div>
     </header>
+
+    <!-- Modal de Créditos -->
+    <div id="creditsModal" class="creditosmodal">
+        <div class="creditosmodal-content">
+            <span class="creditosmodal-close">&times;</span>
+
+            <h2 id="txtCreditos">Créditos dos ícones</h2>
+            <p>Ícones utilizados neste projeto são de:</p>
+            <p>
+                <a href="https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener">Pixel
+                    Perfect</a>,
+                <a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener">Freepik</a>
+                de <a href="https://www.flaticon.com" target="_blank" rel="noopener">www.flaticon.com</a>
+            </p>
+            <p style="font-size: 11px; color: #adb5bd;">Todos os direitos reservados aos respectivos autores.</p>
+        </div>
+    </div>
 
     <!-- ========================= -->
     <!-- MODAL STACK -->
@@ -267,6 +287,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!--######################-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="geral/js/modal.js"></script>
     <script src="geral/js/toast.js"></script>
     <script src="geral/js/index.js"></script>
     <script src="geral/js/selecaoDeCor.js"></script>
