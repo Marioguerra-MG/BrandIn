@@ -662,3 +662,11 @@ button:hover {
   font-weight: 600;
   cursor: pointer;
 }
+
+.stack img {
+  filter: brightness(0) invert(1);
+}
+
+.stack img {
+  filter: brightness(0) invert(1);
+}
