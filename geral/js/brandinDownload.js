@@ -4,7 +4,40 @@ function downloadBadge() {
   const badge = document.getElementById("badge");
   if (!badge) return;
 
-  // 🎨 Pega a cor atual do badge
+  // 🔥 ABRE A ABA IMEDIATAMENTE (ANTI BLOQUEIO)
+  const newTab = window.open("", "_blank");
+
+  if (!newTab) {
+    showToast("Permita pop-ups para baixar 📲");
+    return;
+  }
+
+  // Tela temporária enquanto gera
+  newTab.document.write(`
+    <html>
+      <head>
+        <title>Gerando imagem...</title>
+        <style>
+          body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Poppins, sans-serif;
+          }
+        </style>
+      </head>
+      <body>
+        Gerando sua imagem...
+      </body>
+    </html>
+  `);
+  newTab.document.close();
+
+  // 🎨 Pega cor do badge
   const badgeStyle = window.getComputedStyle(badge);
   const badgeBgColor = badgeStyle.backgroundColor || "#e6d2b5";
 
@@ -20,44 +53,30 @@ function downloadBadge() {
     finalCanvas.width = 1080;
     finalCanvas.height = 1350;
 
-    /* ==========================
-       🎨 FUNDO AUTOMÁTICO
-    ========================== */
-
+    // 🎨 Fundo gradiente
     const gradient = ctx.createLinearGradient(0, 0, 0, finalCanvas.height);
-
     gradient.addColorStop(0, badgeBgColor);
     gradient.addColorStop(1, darkenColor(badgeBgColor, 25));
 
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
 
-    /* ==========================
-       📦 PROPORÇÃO CORRETA
-    ========================== */
-
+    // 📦 Proporção
     const badgeWidth = 650;
     const badgeHeight = (badgeCanvas.height / badgeCanvas.width) * badgeWidth;
 
     const centerX = (finalCanvas.width - badgeWidth) / 2;
     const centerY = (finalCanvas.height - badgeHeight) / 2;
 
-    /* ==========================
-       🌫 SOMBRA ELEGANTE
-    ========================== */
-
+    // 🌫 Sombra
     ctx.shadowColor = "rgba(0,0,0,0.25)";
     ctx.shadowBlur = 50;
     ctx.shadowOffsetY = 25;
 
     ctx.drawImage(badgeCanvas, centerX, centerY, badgeWidth, badgeHeight);
-
     ctx.shadowColor = "transparent";
 
-    /* ==========================
-       💎 MARCA D'ÁGUA
-    ========================== */
-
+    // 💎 Marca d'água
     ctx.save();
     ctx.globalAlpha = 0.06;
     ctx.fillStyle = "#000";
@@ -66,20 +85,115 @@ function downloadBadge() {
     ctx.fillText("Brandin", finalCanvas.width / 2, 200);
     ctx.restore();
 
-    /* ==========================
-       ⬇ DOWNLOAD
-    ========================== */
 
-    const link = document.createElement("a");
-    link.download = "brandin.png";
-    link.href = finalCanvas.toDataURL("image/png");
-    link.click();
+    if (!isProUser) {
 
-    showToast("Baixado com sucesso! 🎉");
+      const siteText = "brand-in-henna.vercel.app";
 
-    /* ==========================
-       🧹 LIMPAR STACKS
-    ========================== */
+      ctx.save();
+
+      ctx.globalAlpha = 0.10; // mais discreto
+      ctx.fillStyle = "#111"; // não preto puro
+      ctx.font = "500 50px Poppins";
+      ctx.textAlign = "center";
+
+      // 🔥 pequena sombra elegante
+      ctx.shadowColor = "rgba(0,0,0,0.2)";
+      ctx.shadowBlur = 4;
+      ctx.shadowOffsetY = 2;
+
+      ctx.fillText(
+        siteText,
+        finalCanvas.width / 2,
+        finalCanvas.height - 35
+      );
+
+      ctx.restore();
+    }
+
+
+    // 📱 Detecta dispositivo
+    const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+    const instructionText = isMobile
+      ? "📲 Segure na imagem e toque em Salvar"
+      : "💻 Clique com botão direito e escolha 'Salvar imagem'";
+
+    finalCanvas.toBlob(function (blob) {
+
+      const url = URL.createObjectURL(blob);
+
+      // 🔥 Atualiza a aba já aberta
+      newTab.document.open();
+      newTab.document.write(`
+  <html>
+    <head>
+      <title>Brandin - Salvar imagem</title>
+      <style>
+        body {
+          margin: 0;
+          background: #000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-family: Poppins, sans-serif;
+          color: #fff;
+          height: 100vh;
+          text-align: center;
+          padding: 20px;
+        }
+
+        img {
+          max-width: 90%;
+          max-height: 70vh;
+          border-radius: 20px;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .instruction {
+          margin-top: 20px;
+          font-size: 18px;
+          opacity: 0.9;
+        }
+
+        button {
+          margin-top: 25px;
+          padding: 12px 24px;
+          border-radius: 30px;
+          border: none;
+          background: white;
+          color: black;
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        button:hover {
+          opacity: 0.8;
+        }
+      </style>
+    </head>
+    <body>
+
+      <img src="${url}" />
+
+      <div class="instruction">
+        ${instructionText}
+      </div>
+
+      <button onclick="window.close()">
+        ← Voltar para o Brandin
+      </button>
+
+    </body>
+  </html>
+`);
+      newTab.document.close();
+
+    }, "image/png");
+
+    showToast("Imagem pronta! 🚀");
 
     clearStacks();
 
@@ -90,6 +204,7 @@ function downloadBadge() {
     }, 800);
 
   }).catch(() => {
+    newTab.close();
     showToast("Erro ao gerar ❌");
   });
 }
