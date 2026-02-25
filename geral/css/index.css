@@ -118,6 +118,17 @@ body {
 }
 
 
+#infoSuporteTxt{
+  font-size: 12px;
+  color: #000000;
+}
+
+#infoEmail{
+  font-size: 12px;
+  color: #475569;
+}
+
+
 
 /* ================= APP ================= */
 .app {
