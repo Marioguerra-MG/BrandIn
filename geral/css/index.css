@@ -260,6 +260,13 @@ body {
   box-shadow: 0 6px 15px rgba(255, 217, 0, 0.4);
 }
 
+
+.plano{
+  display: flex;
+  align-items: end;
+  height: 65%;
+}
+
 /*--*/
 
 .badge {
