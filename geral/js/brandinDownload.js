@@ -139,10 +139,15 @@ function downloadBadge() {
               }
 
               .instruction {
-                margin-top: 20px;
-                font-size: 17px;
-                opacity: 0.9;
-              }
+                margin-top: 25px;
+                font-size: 20px;          /* maior */
+                font-weight: 600;         /* mais forte */
+                opacity: 1;               /* remove transparência */
+                background: rgba(255,255,255,0.08);
+                padding: 15px 20px;
+                border-radius: 14px;
+                backdrop-filter: blur(8px);
+                max-width: 400px;
 
               .warning {
                 margin-top: 15px;
