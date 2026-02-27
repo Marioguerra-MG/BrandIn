@@ -27,7 +27,7 @@ body {
   width: 100%;
   max-width: 420px;
   padding: 15px 20px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +36,30 @@ body {
   border-radius: 14px;
   position: relative;
   z-index: 1000;
+}
+
+
+/* ================= BANNER ================= */
+
+.banner {
+  width: 100%;
+  max-width: 420px; /* mesmo padrão do header e app */
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+#bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção sem distorcer */
+}
+
+#linlKiwify{
+  cursor: pointer;
 }
 
 .logo {
@@ -97,6 +121,8 @@ body {
   }
 }
 
+
+
 .menu-section-title {
   font-size: 11px;
   font-weight: 600;
@@ -112,18 +138,18 @@ body {
   margin: 8px 0;
 }
 
-#planoTxt{
+#planoTxt {
   font-size: 8px;
-  
+
 }
 
 
-#infoSuporteTxt{
+#infoSuporteTxt {
   font-size: 12px;
   color: #000000;
 }
 
-#infoEmail{
+#infoEmail {
   font-size: 12px;
   color: #475569;
 }
@@ -161,13 +187,14 @@ body {
 /* BARRA LATERAL MODERNA */
 /* ========================================= */
 .stackFreePro {
- 
+
   display: flex;
   flex-direction: column;
   gap: 18px;
 
 
-  background: rgba(15, 23, 42, 0.6); /* vidro escuro */
+  background: rgba(15, 23, 42, 0.6);
+  /* vidro escuro */
   backdrop-filter: blur(12px);
 
   border-radius: 8px;
@@ -616,6 +643,7 @@ button:hover {
   color: #ec0000;
   transform: rotate(90deg);
 }
+
 /*--------------------*/
 .external-block {
   position: fixed;
@@ -662,4 +690,3 @@ button:hover {
   font-weight: 600;
   cursor: pointer;
 }
-

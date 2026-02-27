@@ -4,11 +4,9 @@ function downloadBadge() {
   const badge = document.getElementById("badge");
   if (!badge) return;
 
-  // Detecta navegador interno (Facebook / Instagram)
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
   const isFacebookBrowser = /FBAN|FBAV|Instagram/i.test(userAgent);
 
-  // 🔥 ABRE A ABA IMEDIATAMENTE (ANTI BLOQUEIO)
   const newTab = window.open("", "_blank");
 
   if (!newTab) {
@@ -16,7 +14,6 @@ function downloadBadge() {
     return;
   }
 
-  // Tela temporária
   newTab.document.write(`
     <html>
       <head>
@@ -56,7 +53,7 @@ function downloadBadge() {
     finalCanvas.width = 1080;
     finalCanvas.height = 1350;
 
-    // 🎨 Fundo
+    // 🎨 Fundo gradiente
     const gradient = ctx.createLinearGradient(0, 0, 0, finalCanvas.height);
     gradient.addColorStop(0, badgeBgColor);
     gradient.addColorStop(1, darkenColor(badgeBgColor, 25));
@@ -64,7 +61,7 @@ function downloadBadge() {
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
 
-    // 📦 Proporção
+    // 📦 Proporção do badge
     const badgeWidth = 650;
     const badgeHeight = (badgeCanvas.height / badgeCanvas.width) * badgeWidth;
 
@@ -90,7 +87,6 @@ function downloadBadge() {
 
     // 🔒 Marca site se não for PRO
     if (!isProUser) {
-
       ctx.save();
       ctx.globalAlpha = 0.08;
       ctx.fillStyle = "#222";
@@ -106,7 +102,6 @@ function downloadBadge() {
       ctx.restore();
     }
 
-    // 📱 Detecta mobile
     const isMobile = /iPhone|Android/i.test(userAgent);
     const instructionText = isMobile
       ? "📲 Segure na imagem para salvar"
@@ -118,93 +113,94 @@ function downloadBadge() {
 
       newTab.document.open();
       newTab.document.write(`
-  <html>
-    <head>
-      <title>Brandin - Salvar imagem</title>
-      <style>
-        body {
-          margin: 0;
-          background: #000;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          font-family: Poppins, sans-serif;
-          color: #fff;
-          height: 100vh;
-          text-align: center;
-          padding: 20px;
-        }
+        <html>
+          <head>
+            <title>Brandin - Salvar imagem</title>
+            <style>
+              body {
+                margin: 0;
+                background: #000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-family: Poppins, sans-serif;
+                color: #fff;
+                height: 100vh;
+                text-align: center;
+                padding: 20px;
+              }
 
-        img {
-          max-width: 90%;
-          max-height: 65vh;
-          border-radius: 20px;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
+              img {
+                max-width: 90%;
+                max-height: 65vh;
+                border-radius: 20px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+              }
 
-        .instruction {
-          margin-top: 20px;
-          font-size: 17px;
-          opacity: 0.9;
-        }
+              .instruction {
+                margin-top: 20px;
+                font-size: 17px;
+                opacity: 0.9;
+              }
 
-        .warning {
-          margin-top: 15px;
-          font-size: 14px;
-          opacity: 0.7;
-        }
+              .warning {
+                margin-top: 15px;
+                font-size: 14px;
+                opacity: 0.7;
+              }
 
-        button {
-          margin-top: 20px;
-          padding: 12px 24px;
-          border-radius: 30px;
-          border: none;
-          background: white;
-          color: black;
-          font-weight: 600;
-          font-size: 15px;
-          cursor: pointer;
-          transition: 0.3s;
-        }
+              button {
+                margin-top: 20px;
+                padding: 12px 24px;
+                border-radius: 30px;
+                border: none;
+                background: white;
+                color: black;
+                font-weight: 600;
+                font-size: 15px;
+                cursor: pointer;
+                transition: 0.3s;
+              }
 
-        button:hover {
-          opacity: 0.85;
-        }
+              button:hover {
+                opacity: 0.85;
+              }
 
-        .external-btn {
-          background: #1877f2;
-          color: white;
-        }
-      </style>
-    </head>
-    <body>
+              .external-btn {
+                background: #1877f2;
+                color: white;
+              }
+            </style>
+          </head>
+          <body>
 
-      <img src="${url}" />
+            <img src="${url}" />
 
-      <div class="instruction">
-        ${instructionText}
-      </div>
+            <div class="instruction">
+              ${instructionText}
+            </div>
 
-      ${isFacebookBrowser ? `
-        <div class="warning">
-          O navegador do Facebook pode bloquear o download.
-        </div>
+            ${isFacebookBrowser ? `
+              <div class="warning">
+                O navegador do Facebook pode bloquear o download.
+              </div>
 
-        <a href="https://brand-in-henna.vercel.app" target="_blank">
-          <button class="external-btn">
-            🌍 Abrir no navegador externo
-          </button>
-        </a>
-      ` : ""}
+              <a href="https://brand-in-henna.vercel.app" target="_blank">
+                <button class="external-btn">
+                  🌍 Abrir no navegador externo
+                </button>
+              </a>
+            ` : ""}
 
-      <button onclick="window.close()">
-        ← Voltar para o Brandin
-      </button>
+            <button onclick="window.close()">
+              ← Voltar para o Brandin
+            </button>
 
-    </body>
-  </html>
+          </body> 
+        </html>
       `);
+
       newTab.document.close();
 
     }, "image/png");
@@ -223,7 +219,6 @@ function downloadBadge() {
     showToast("Erro ao gerar ❌");
   });
 }
-
 
 /* ==========================
    🧹 FUNÇÃO LIMPAR STACKS
@@ -275,3 +270,5 @@ function darkenColor(rgb, percent) {
 
   return `rgb(${r}, ${g}, ${b})`;
 }
+
+
