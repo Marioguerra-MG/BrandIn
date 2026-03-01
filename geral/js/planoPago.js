@@ -6,8 +6,8 @@ if (urlParams.get("pro") === "true") {
 }
 
 
-// Define status PRO
-let isProUser = localStorage.getItem("isProUser") === "true";
+const DEV_MODE = true;
+let isProUser = DEV_MODE || localStorage.getItem("isProUser") === "true";
 
 
 
