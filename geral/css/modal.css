@@ -1,9 +1,10 @@
 /* Modal de Créditos - Começa fechado e centralizado */
 .creditosmodal {
-    display: none; /* começa fechado */
+    display: none;
+    /* começa fechado */
     position: fixed;
     inset: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 
     align-items: center;
@@ -11,7 +12,8 @@
 }
 
 .creditosmodal.show {
-    display: flex; /* abre centralizado */
+    display: flex;
+    /* abre centralizado */
 }
 
 .creditosmodal-content {
@@ -23,7 +25,7 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .creditosmodal-close {
@@ -51,6 +53,126 @@
     color: #495057;
 }
 
-#txtCreditos{
+#txtCreditos {
     color: black;
+}
+
+
+
+
+/* ========================= */
+/* EDIT STACK MODAL */
+/* ========================= */
+
+.EditStack-modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    z-index: 99999;
+    /* 🔥 Fica acima de tudo */
+}
+
+.EditStack-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.EditStack-content {
+    background: #1a1a1a;
+    width: 95%;
+    max-width: 600px;
+    /* 🔥 Maior */
+    max-height: 90vh;
+    /* 🔥 Evita ultrapassar tela */
+    overflow-y: auto;
+    /* 🔥 Scroll interno */
+
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+
+    animation: modalFadeIn 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Animação */
+@keyframes modalFadeIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Botão fechar */
+.stack-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.stack-close-btn:hover {
+    background: #ff0000;
+}
+
+/* Área custom */
+.custom-stack-area {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.custom-stack-area h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#customPreview img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 15px auto;
+    display: block;
+    border-radius: 12px;
+    background: #111;
+    padding: 8px;
+}
+
+.custom-stack-area button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #6C63FF;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.custom-stack-area button:hover {
+    transform: scale(1.05);
 }

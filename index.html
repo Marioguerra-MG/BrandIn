@@ -87,6 +87,7 @@
     <div class="stack-modal" id="stackModal">
         <div class="stack-content">
 
+
             <div class="stack-header">
                 <button class="stack-close-btn" onclick="closeStackModal()">✕</button>
 
@@ -184,10 +185,25 @@
                     </div>
                 </div>
 
+
                 -->
 
 
+
+                <div class="plano">
+                    <div class="freeIcone">
+                        <a href="#" class="open-edit-stack-btn" onclick="openEditStackModal(); return false;">
+                            <span>Edit</span>
+                            <span>Stack</span>
+                        </a>
+                    </div>
+                </div>
+
+
             </div>
+
+
+
 
 
 
@@ -259,6 +275,35 @@
     </div>
 
     <div id="toast" class="toast"></div>
+
+    <!-- ========================= -->
+    <!-- MODAL Edit pro -->
+    <!-- ========================= -->
+
+
+    <div class="EditStack-modal" id="EditStackModal">
+        <div class="EditStack-content">
+            <button class="stack-close-btn" onclick="closeEditStackModal()">✕</button>
+
+            <div class="custom-stack-area">
+                <h4>Stack Personalizada (Pro)</h4>
+                <p class="stackTxt-info">
+                    Dica: Imagens com fundo branco ou transparente garantem um visual mais elegante.
+                </p>
+
+
+                <input type="file" id="customStackInput" accept="image/*">
+
+                <div id="customPreview"></div>
+
+                <button type="button" onclick="generateCustomStack()">
+                    Gerar Stack
+                </button>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- ========================= -->
     <!-- MODAL PLANO PRO -->

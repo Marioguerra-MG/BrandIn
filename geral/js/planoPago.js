@@ -161,9 +161,11 @@ function updateStackCounter() {
 
   const mode = modal.dataset.mode || "pro";
 
-  let badgeCount = 0;
+  //let badgeCount = 0;
   let selectedCount = document.querySelectorAll(".stack-option.selected").length;
   let max = MAX_STACKS;
+
+  let badgeCount = stackContainer.querySelectorAll(".stack-circle").length;
 
   if (mode === "pro") {
 
@@ -267,3 +269,93 @@ function updateProUI() {
   }
 }
 
+/* ====================== */
+/* STACK PERSONALIZADA */
+/* ====================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const customInput = document.getElementById("customStackInput");
+  const customPreview = document.getElementById("customPreview");
+
+  if (customInput) {
+
+    customInput.addEventListener("change", function () {
+
+      const file = this.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+
+        customPreview.innerHTML = `
+  <div class="preview-circle">
+    <img src="${e.target.result}" id="previewImage">
+  </div>
+`;
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
+
+});
+
+
+function generateCustomStack() {
+
+  if (!isProUser) {
+    showToast("Disponível apenas no Plano Pro 🔒");
+    return;
+  }
+
+  const previewImage = document.getElementById("previewImage");
+  const stackContainer = document.getElementById("badgeStack");
+
+  if (!previewImage) {
+    showToast("Selecione uma imagem ⚠️");
+    return;
+  }
+
+  if (stackContainer.querySelectorAll(".stack-circle").length >= MAX_STACKS) {
+    showToast("Limite de 5 stacks atingido 🚫");
+    return;
+  }
+
+  // 🔥 cria container redondo
+  const circle = document.createElement("div");
+  circle.classList.add("stack-circle");
+
+  const img = document.createElement("img");
+  img.src = previewImage.src;
+
+  circle.appendChild(img);
+
+  circle.addEventListener("click", () => {
+    removeCustomStack(img.src);
+    circle.remove();
+    updateStackCounter();
+    showToast("Stack removida ❌");
+  });
+
+  stackContainer.appendChild(circle);
+
+
+  document.getElementById("customPreview").innerHTML = "";
+  document.getElementById("customStackInput").value = "";
+
+  updateStackCounter();
+  showToast("Stack personalizada adicionada 🚀");
+}
+
+
+
+function removeCustomStack(imageSrc) {
+
+  let savedStacks = JSON.parse(localStorage.getItem("customStacks")) || [];
+
+  savedStacks = savedStacks.filter(src => src !== imageSrc);
+
+  localStorage.setItem("customStacks", JSON.stringify(savedStacks));
+}

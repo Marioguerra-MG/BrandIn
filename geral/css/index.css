@@ -43,7 +43,8 @@ body {
 
 .banner {
   width: 100%;
-  max-width: 420px; /* mesmo padrão do header e app */
+  max-width: 420px;
+  /* mesmo padrão do header e app */
   height: 90px;
   display: flex;
   align-items: center;
@@ -55,10 +56,11 @@ body {
 #bannerImg {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* mantém proporção sem distorcer */
+  object-fit: cover;
+  /* mantém proporção sem distorcer */
 }
 
-#linlKiwify{
+#linlKiwify {
   cursor: pointer;
 }
 
@@ -261,7 +263,7 @@ body {
 }
 
 
-.plano{
+.plano {
   display: flex;
   align-items: end;
   height: 65%;
@@ -282,7 +284,7 @@ body {
 /* BADGE TOP */
 .badge-top {
   height: 110px;
-  background: linear-gradient(135deg, #ff4d00, #ff7a00);
+  background: linear-gradient(135deg, #afafaf, #6e6359);
 }
 
 /* QR CODE (substituindo a foto) */
@@ -340,6 +342,20 @@ body {
   font-size: 15px;
   color: #9e9e9e;
   font-weight: 500;
+}
+
+
+#badgeStack {
+  display: flex;
+  justify-content: center;
+  /* centraliza horizontal */
+  align-items: center;
+  /* centraliza vertical */
+  gap: 8px;
+  /* espaço entre stacks */
+  flex-wrap: wrap;
+  /* quebra linha se passar de 1 linha */
+  margin-top: 10px;
 }
 
 /* CONTROLS */
@@ -696,4 +712,38 @@ button:hover {
   color: black;
   font-weight: 600;
   cursor: pointer;
+}
+
+
+/*-----------------------*/
+
+#customPreview {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.stack-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border: 1px solid black;
+}
+
+.stack-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.stackTxt-info{
+  color: #686868;
 }

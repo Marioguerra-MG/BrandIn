@@ -20,3 +20,44 @@ window.addEventListener("click", function(e) {
         modal.classList.remove("show");
     }
 });
+
+
+
+
+
+
+/* ========================= */
+/* EDIT STACK MODAL */
+/* ========================= */
+
+function openEditStackModal() {
+  const modal = document.getElementById("EditStackModal");
+  if (!modal) return;
+
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeEditStackModal() {
+  const modal = document.getElementById("EditStackModal");
+  if (!modal) return;
+
+  modal.classList.remove("show");
+  document.body.style.overflow = "auto";
+}
+
+/* Fecha clicando fora */
+document.addEventListener("click", function (e) {
+  const modal = document.getElementById("EditStackModal");
+  const content = document.querySelector(".EditStack-content");
+
+  if (!modal || !content) return;
+
+  if (
+    modal.classList.contains("show") &&
+    !content.contains(e.target) &&
+    !e.target.closest(".open-edit-stack-btn")
+  ) {
+    closeEditStackModal();
+  }
+});
