@@ -323,7 +323,6 @@ function generateCustomStack() {
     return;
   }
 
-  // 🔥 cria container redondo
   const circle = document.createElement("div");
   circle.classList.add("stack-circle");
 
@@ -341,12 +340,18 @@ function generateCustomStack() {
 
   stackContainer.appendChild(circle);
 
-
   document.getElementById("customPreview").innerHTML = "";
   document.getElementById("customStackInput").value = "";
 
   updateStackCounter();
+
+  // 🔥 Toast primeiro
   showToast("Stack personalizada adicionada 🚀");
+
+  // 🔥 Fecha com delay suave
+  setTimeout(() => {
+    closeEditStackModal();
+  }, 300);
 }
 
 
