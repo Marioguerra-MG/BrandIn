@@ -195,6 +195,45 @@ function resetForm() {
   checkForm();
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  setTimeout(() => {
+    showPixToast();
+  }, 800); // aparece 0.8s depois de abrir
+
+});
+
+
+function showPixToast() {
+
+  const toast = document.createElement("div");
+  toast.className = "pix-toast";
+
+  toast.innerHTML = `
+    <div class="pix-toast-content">
+      <button class="pix-close-btn">✕</button>
+      <strong>💙 Apoie o Projeto</strong><br>
+      Contribua via PIX:<br>
+      <b>nexleadnexlead@gmail.com</b>
+    </div>
+  `;
+
+  document.body.appendChild(toast);
+
+  // anima entrada
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 100);
+
+  // botão fechar
+  const closeBtn = toast.querySelector(".pix-close-btn");
+
+  closeBtn.addEventListener("click", () => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 300);
+  });
+}
+
 /* ======================
    FUNÇÕES GLOBAIS
 ====================== */
